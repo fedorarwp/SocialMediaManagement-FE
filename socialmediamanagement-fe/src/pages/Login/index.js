@@ -1,46 +1,94 @@
 import React from "react";
-import style from "./style.module.css";
-import { Form, Input } from "antd";
-import 'antd/dist/antd.css';
+import style from "./login.module.css";
+import { Form, Input, Button, notification } from "antd";
+import "antd/dist/antd.css";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+//import axios from "axios";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    if (email === "beta@mail.com" && password === "beta") {
+      navigate("/draft");
+    }
+
+    //axios.post('link API', {email, password})
+    //.then(response => {
+      //localStorage.
+      //const findUser = response.data.find((user) => {
+        //if (email === user.email && password === user.password){
+          //return true
+        //}
+        //return false
+      //})
+      
+      //console.log(findUser)
+
+      //if(findUser){
+        //navigate('/draft')
+      //} else {
+        //notification.error yang ada di bawahnya ini
+      //}
+    //})
+    else
+    notification.error({
+      message: "Login failed",
+      description: "Email or password is incorrect"
+    })
+  };
+
   return (
     <div className={style.wrapper}>
       <div className={style.leftWrapper}>
         <div className={style.formContainer}>
-          <Form labelCol={{span:10}}>
+        <h2><b>Log in to Beta management system</b></h2>
+          <Form labelCol={{ span: 8 }} onFinish={handleLogin}>
             <div className={style.emailContainer}>
-              <Form.Item name="email" label="Email" rules={[
+              <label>Email</label>
+              <Form.Item name="email" rules={[
                 {
                   required: true,
-                  message: "Email is required",
+                  message: "Please enter your email"
                 },
-                {type: "email", message: "Please enter a valid email"}
+                {type:'email', message:'Enter a valid email'}
               ]}
-              hasFeedback
-              >
-                <Input size="large" placeholder="Insert your email" />
+              hasFeedback>
+              <Input
+                onChange={(e) => setEmail(e.target.value)}
+                size="large"
+                placeholder="Insert your email"
+              />
               </Form.Item>
             </div>
 
             <div className={style.passwordContainer}>
-              <Form.Item name="password" label="Password" rules={[
+              <label>Password</label>
+              <Form.Item name="password" rules={[
                 {
                   required: true,
-                  message: "Password is required",
+                  message: "Please enter your password"
                 }
               ]}
-              hasFeedback
-              >
-                <Input.Password size="large" placeholder="Insert your password" />
+              hasFeedback>
+              <Input.Password
+                onChange={(e) => setPassword(e.target.value)}
+                size="large"
+                placeholder="Insert your password"
+              />
               </Form.Item>
             </div>
 
             <div className={style.btnContainer}>
-            <button type="primary" className={style.btn}>Log in</button>
+              <Button htmlType="submit" type="primary" className={style.btn} style={{ background: "black"}}>
+                Log in
+              </Button>
             </div>
-
           </Form>
+          Don't have any account yet? <b><Link style={{color: 'black'}} to='/register'>Register</Link></b>
         </div>
       </div>
 
