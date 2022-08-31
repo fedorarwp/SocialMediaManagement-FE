@@ -1,8 +1,9 @@
 import { Dropdown, Menu, Modal } from "antd";
 import React from "react";
 import style from "./draft.module.css";
-import { DeleteOutlined } from "@ant-design/icons";
+import { DeleteOutlined, MailOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Draft() {
   const [open, setOpen] = useState(false);
@@ -31,47 +32,50 @@ function Draft() {
 
   return (
     <div className={style.wrapper}>
-      {tweets.map((tweet) => (
-        <div key={tweet.id} className={style.postItem}>
-          <div className={style.card}>
-            {tweet.title}
-            <Dropdown
-              placement="bottomRight"
-              overlay={
-                <Menu
-                  items={[
-                    {
-                      key: "delete",
-                      label: (
-                        <span>
-                          <DeleteOutlined />
-                          &ensp; Delete Post
-                        </span>
-                      ),
-                    },
-                  ]}
-                />
-              }
-            >
-              <button className={style.btnMore}>...</button>
-            </Dropdown>
+      <div className="content">
+        {tweets.map((tweet) => (
+          <div key={tweet.id} className={style.postItem}>
+            <div className={style.card}>
+              {tweet.title}
+              <Dropdown
+                placement="bottomRight"
+                overlay={
+                  <Menu
+                    items={[
+                      {
+                        key: "delete",
+                        label: (
+                          <span>
+                            <DeleteOutlined />
+                            &ensp; Delete Post
+                          </span>
+                        ),
+                      },
+                    ]}
+                  />
+                }
+              >
+                <button className={style.btnMore}>...</button>
+              </Dropdown>
+            </div>
+            <div className={style.btnContainer}>
+              <button className={style.btn} onClick={() => handleOpen(tweet)}>
+                Post Now
+              </button>
+            </div>
+            <div className={style.btnContainer}>
+              <button className={style.btn}>Schedule</button>
+            </div>
           </div>
-          <div className={style.btnContainer}>
-            <button className={style.btn} onClick={() => handleOpen(tweet)}>
-              Post Now
-            </button>
-          </div>
-          <div className={style.btnContainer}>
-            <button className={style.btn}>Schedule</button>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
       <Modal
         title="Are you sure you want to post now?"
         visible={open}
         onOk={() => setOpen(false)}
         onCancel={() => setOpen(false)}
+        okButtonProps={{ style: { background: "black", border: "black" } }}
       >
         <h3>{currentData.title}</h3>
       </Modal>
