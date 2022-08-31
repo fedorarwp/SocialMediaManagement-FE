@@ -77,7 +77,7 @@ function Register() {
                 htmlType="submit"
                 type="primary"
                 className={style.btn}
-                style={{ background: "black" }}
+                style={{ background: "black", border:"black" }}
               >
                 Register
               </Button>

@@ -83,7 +83,7 @@ function Login() {
             </div>
 
             <div className={style.btnContainer}>
-              <Button htmlType="submit" type="primary" className={style.btn} style={{ background: "black"}}>
+              <Button htmlType="submit" type="primary" className={style.btn} style={{ background: "black", border: "black"}}>
                 Log in
               </Button>
             </div>

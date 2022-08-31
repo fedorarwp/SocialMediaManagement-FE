@@ -1,0 +1,11 @@
+.wrapper {
+  border: 0px solid #000000;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.leftText{
+    width: 40%;
+    font-size: 32px;
+    padding-top: 10rem;
+}
