@@ -1,12 +1,15 @@
  .logo {
     float: left;
-    width: 120px;
-    height: 31px;
-    margin: 16px 24px 16px 0;
-    background: rgba(255, 255, 255, 0.3);
+    /* width: 120px;
+    height: 31px; */
+    color: black;
+    font-size: x-large;
+    text-align: center;
+    font-weight: bolder;
+    padding-right: 7rem;
   }
   
-  .ant-row-rtl .logo {
+  .ant-row-rtl {
     float: right;
     margin: 16px 0 16px 24px;
   }
@@ -18,3 +21,9 @@
   .ant-layout{
     height: 100%;
   }
+
+  
+.ant-layout-header {
+  background: white;
+  padding-left: 2rem;
+}

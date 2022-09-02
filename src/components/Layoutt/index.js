@@ -8,11 +8,26 @@ import "./layoutt.css";
 import Draft from "../../pages/Draft";
 import React, { Children } from "react";
 const { Header, Content, Sider } = Layout;
-const items1 = ["1", "2", "3"].map((key) => ({
-  key,
-  label: `nav ${key}`,
-}));
-const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
+
+const topbarItems = [
+  {
+    key: "pricing",
+    label: "Pricing",
+  },
+  {
+    key: "features",
+    label: "Features",
+  },
+  {
+    key: "contact",
+    label: "Contact Us",
+  }
+];
+// ["Pricing", "Features", "Contact Us"].map((key) => ({
+//   key,
+//   label: `${key}`,
+// }));
+const sidebarItems = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
   (icon, index) => {
     const key = String(index + 1);
     return {
@@ -33,12 +48,12 @@ const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
 const Layoutt = ({ children, isSidebarVisible = true }) => (
   <Layout>
     <Header className="header">
-      <div className="logo" />
+      <div className="logo"><div className="logoText">BETA</div></div>
       <Menu
-        theme="dark"
+        theme="light"
         mode="horizontal"
-        defaultSelectedKeys={["2"]}
-        items={items1}
+        defaultSelectedKeys={[""]}
+        items={topbarItems}
       />
     </Header>
     <Layout>
@@ -52,7 +67,7 @@ const Layoutt = ({ children, isSidebarVisible = true }) => (
               height: "100%",
               borderRight: 0,
             }}
-            items={items2}
+            items={sidebarItems}
           />
         </Sider>
       )}

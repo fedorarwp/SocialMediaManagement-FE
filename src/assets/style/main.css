@@ -43,7 +43,7 @@ body{
     height: 100%;
 }
 
-.logo{
+.logoCustom{
     background-color: black;
     height: 60px;
     padding-left: 1rem;
@@ -51,7 +51,7 @@ body{
     justify-content: flex-start;
 }
 
-.logo a{
+.logoCustom a{
     color: white;
     font-weight: 500;
     font-size: 2rem;

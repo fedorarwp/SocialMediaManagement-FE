@@ -11,7 +11,7 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layoutt isSidebarVisible={false}><Landing /></Layoutt>} />
+          <Route path="/" element={/*<Layoutt isSidebarVisible={false}>*/<Landing />} />
           <Route path="/draft" element={<Layoutt><Draft/></Layoutt>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
