@@ -1,11 +1,57 @@
 .wrapper {
   border: 0px solid #000000;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding-left: 2rem;
+  padding-right: 2rem; */
+  padding-bottom: 2rem;
 }
 
 .leftText{
     width: 40%;
-    font-size: 32px;
+    font-size: 16px;
     padding-top: 10rem;
+    padding-left: 3rem;
+}
+
+.landingHeader {
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  font-size: 18px;
+}
+
+.topbarLeft {
+  display: inline-flex;
+  align-items: center;
+}
+
+.landingLogo {
+  font-size: 32px;
+  font-weight: bolder;
+  margin-right: 16px;
+  color: black;
+  padding-left: 2rem;
+  padding-right: 5rem;
+}
+
+a{
+  color: black;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.topbarRight {
+  display: inline-flex;
+  align-items: center;
+  padding-right: 2rem;
+}
+
+.registerLandingBtn{
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  justify-content: center;
 }
