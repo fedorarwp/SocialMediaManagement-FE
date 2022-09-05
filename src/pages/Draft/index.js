@@ -1,17 +1,55 @@
-import { Dropdown, Menu, Modal } from "antd";
+import { Dropdown, Menu, Modal, DatePicker, Space } from "antd";
 import React from "react";
 import style from "./draft.module.css";
 import { DeleteOutlined, MailOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 function Draft() {
   const [open, setOpen] = useState(false);
   const [currentData, setCurrentData] = useState({});
-  const handleOpen = (param) => {
+  const handleOpenNow = (param) => {
     setCurrentData(param);
     setOpen(true);
   };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenSchedule = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  const onChange = (date, dateString) => {
+    console.log(date, dateString);
+  };
+
+  const disabledDate = (current) => {
+    // Can not select days before today and today
+    return current && current < moment().endOf("day");
+  };
+
+  const disabledDateTime = () => ({
+    disabledHours: () => range(0, 24).splice(0, 0),
+    disabledMinutes: () => range(0, 0),
+    disabledSeconds: () => range(0, 0), //[55, 56],
+  });
+
+  const range = (start, end) => {
+    const result = [];
+  
+    for (let i = start; i < end; i++) {
+      result.push(i);
+    }
+  
+    return result;
+  };
+
   const tweets = [
     {
       id: 1,
@@ -59,12 +97,21 @@ function Draft() {
               </Dropdown>
             </div>
             <div className={style.btnContainer}>
-              <button className={style.btn} onClick={() => handleOpen(tweet)}>
+              <button
+                className={style.btn}
+                onClick={() => handleOpenNow(tweet)}
+              >
                 Post Now
               </button>
             </div>
             <div className={style.btnContainer}>
-              <button className={style.btn}>Schedule</button>
+              <button
+                className={style.btn}
+                onClick={handleOpenSchedule}
+                type="primary"
+              >
+                Schedule
+              </button>
             </div>
           </div>
         ))}
@@ -78,6 +125,22 @@ function Draft() {
         okButtonProps={{ style: { background: "black", border: "black" } }}
       >
         <h3>{currentData.title}</h3>
+      </Modal>
+
+      <Modal
+        title="Pick your schedule"
+        visible={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        okButtonProps={{ style: { background: "black", border: "black" } }}
+      >
+        <DatePicker
+          onChange={onChange}
+          disabledDate={disabledDate}
+          disabledTime={disabledDateTime}
+          showTime={{ defaultValue: moment("00:00:00", "HH:mm:ss") }}
+          //showTime={{ format: "YYYY-MM-DD HH:mm:ss" }}
+        />
       </Modal>
     </div>
   );

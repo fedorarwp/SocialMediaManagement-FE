@@ -5,8 +5,10 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import "./layoutt.css";
-import Draft from "../../pages/Draft";
+import style from "./layoutt.css";
+//import Draft from "../../pages/Draft";
 import React, { Children } from "react";
+import { Link } from "react-router-dom";
 const { Header, Content, Sider } = Layout;
 
 const topbarItems = [
@@ -21,40 +23,76 @@ const topbarItems = [
   {
     key: "contact",
     label: "Contact Us",
-  }
+  },
 ];
 // ["Pricing", "Features", "Contact Us"].map((key) => ({
 //   key,
 //   label: `${key}`,
 // }));
-const sidebarItems = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
-  (icon, index) => {
-    const key = String(index + 1);
-    return {
-      key: `sub${key}`,
-      icon: React.createElement(icon),
-      label: `subnav ${key}`,
-      children: new Array(4).fill(null).map((_, j) => {
-        const subKey = index * 4 + j + 1;
-        return {
-          key: subKey,
-          label: `option${subKey}`,
-        };
-      }),
-    };
-  }
-);
+const sidebarItems = [
+  {
+    key: "workspaces",
+    label: "Workspaces",
+  },
+  {
+    key: "analytics",
+    label: "Analytics",
+  },
+  {
+    key: "profile",
+    label: "My Profile",
+  },
+];
+
+const rightStyle = { position: "absolute", top: 0, right: 0 };
 
 const Layoutt = ({ children, isSidebarVisible = true }) => (
   <Layout>
+    {/* <div className={style.landingHeader}>
+      <div className={style.topbarLeft}>
+        <div className={style.landingLogo}>Beta</div>
+        <div>
+          <a>Pricing</a>
+          <a>Features</a>
+          <a>Contact Us</a>
+        </div>
+      </div>
+      <div className={style.topbarRight}>
+        <div>
+          <Link style={{ color: "black" }} to="/login">
+            Log in
+          </Link>
+          <Link
+            style={{
+              background: "black",
+              color: "white",
+              borderRadius: "5px",
+              padding: "0.5rem",
+            }}
+            to="/register"
+          >
+            Register
+          </Link>
+        </div>
+      </div>
+    </div> */}
     <Header className="header">
-      <div className="logo"><div className="logoText">BETA</div></div>
-      <Menu
-        theme="light"
-        mode="horizontal"
-        defaultSelectedKeys={[""]}
-        items={topbarItems}
-      />
+      <div className="leftHeader">
+        <div className="logo">
+          <div className="logoText">BETA</div>
+        </div>
+        <Menu
+          theme="light"
+          mode="horizontal"
+          defaultSelectedKeys={[""]}
+          items={topbarItems}
+        />
+      </div>
+      <div className="rightHeader">
+        <Link style={{ color: "black" }} to="/">
+          Log out
+        </Link>
+      </div>
     </Header>
     <Layout>
       {isSidebarVisible && (
