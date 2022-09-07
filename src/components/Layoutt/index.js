@@ -1,13 +1,7 @@
-import {
-  LaptopOutlined,
-  NotificationOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import "./layoutt.css";
-import style from "./layoutt.css";
 //import Draft from "../../pages/Draft";
-import React, { Children } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 const { Header, Content, Sider } = Layout;
 
@@ -48,7 +42,7 @@ const sidebarItems = [
   },
 ];
 
-const rightStyle = { position: "absolute", top: 0, right: 0 };
+
 
 const Layoutt = ({ children, isSidebarVisible = true }) => (
   <Layout>

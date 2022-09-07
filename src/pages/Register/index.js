@@ -1,8 +1,7 @@
 import React from "react";
 import style from "./register.module.css";
-import { Form, Input, Button, notification } from "antd";
+import { Form, Input, Button } from "antd";
 import "antd/dist/antd.css";
-import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 function Register() {

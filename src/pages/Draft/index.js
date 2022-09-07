@@ -1,10 +1,9 @@
-import { Dropdown, Menu, Modal, DatePicker, Space } from "antd";
+import { Dropdown, Menu, Modal, DatePicker } from "antd";
 import React from "react";
 import style from "./draft.module.css";
 import "../../assets/style/main.css";
-import { DeleteOutlined, MailOutlined } from "@ant-design/icons";
+import { DeleteOutlined } from "@ant-design/icons";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import moment from "moment";
 
 function Draft() {
