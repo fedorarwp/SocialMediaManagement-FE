@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    /* overflow-x: hidden; */
+}
+
+.app{
+    background-color: #f3f3f3;
+    height: 100vh;
+    width: 100vw;
+}
+
+.grid-layout {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 185px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+    "sidebar topbar"
+    "sidebar content";
+}
+
+.sidebar{
+    grid-area: sidebar;
+    height: calc(100vh - 60px);
+}
+
+.topbar{
+    grid-area: topbar;
+    background-color: #ebebeb;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2rem;
+}
+
+.content{
+    grid-area: content;
+    padding-top: 2rem;
+}
+
+.sideMenu{
+    height: 100%;
+}
+
+.logoCustom{
+    background-color: black;
+    height: 60px;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logoCustom a{
+    color: white;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.card{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px #c4c4c4;
+    width: 60%;
+    position: relative;
+}
+
+.card.posted{
+    width: 78.8%;
+}
