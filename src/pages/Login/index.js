@@ -13,7 +13,7 @@ function Login() {
 
   const handleLogin = () => {
     if (email === "beta@mail.com" && password === "beta") {
-      navigate("/draft");
+      navigate("/workspaces");
     }
 
     //axios.post('link API', {email, password})

@@ -1,6 +1,7 @@
 import { Dropdown, Menu, Modal, DatePicker, Space } from "antd";
 import React from "react";
 import style from "./draft.module.css";
+import "../../assets/style/main.css";
 import { DeleteOutlined, MailOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -42,11 +43,11 @@ function Draft() {
 
   const range = (start, end) => {
     const result = [];
-  
+
     for (let i = start; i < end; i++) {
       result.push(i);
     }
-  
+
     return result;
   };
 
@@ -55,16 +56,19 @@ function Draft() {
       id: 1,
       title: "Tweet ini ditulis oleh Ghazel si PM Beta",
       date: "2022-08-26",
+      isPosted: true,
     },
     {
       id: 2,
       title: "Tweet ini ditulis oleh Fefe si FE Beta",
       date: "2022-08-27",
+      isPosted: false,
     },
     {
       id: 3,
       title: "Tweet ini ditulis oleh Ez si BE Beta",
       date: "2022-08-28",
+      isPosted: false,
     },
   ];
 
@@ -73,7 +77,7 @@ function Draft() {
       <div className="content">
         {tweets.map((tweet) => (
           <div key={tweet.id} className={style.postItem}>
-            <div className={style.card}>
+            <div className={`card ${tweet.isPosted ? "posted" : ""}`}>
               {tweet.title}
               <Dropdown
                 placement="bottomRight"
@@ -96,23 +100,28 @@ function Draft() {
                 <button className={style.btnMore}>...</button>
               </Dropdown>
             </div>
-            <div className={style.btnContainer}>
-              <button
-                className={style.btn}
-                onClick={() => handleOpenNow(tweet)}
-              >
-                Post Now
-              </button>
-            </div>
-            <div className={style.btnContainer}>
-              <button
-                className={style.btn}
-                onClick={handleOpenSchedule}
-                type="primary"
-              >
-                Schedule
-              </button>
-            </div>
+
+            {!tweet.isPosted && (
+              <>
+                <div className={style.btnContainer}>
+                  <button
+                    className={style.btn}
+                    onClick={() => handleOpenNow(tweet)}
+                  >
+                    Post Now
+                  </button>
+                </div>
+                <div className={style.btnContainer}>
+                  <button
+                    className={style.btn}
+                    onClick={handleOpenSchedule}
+                    type="primary"
+                  >
+                    Schedule
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         ))}
       </div>

@@ -32,7 +32,11 @@ const topbarItems = [
 const sidebarItems = [
   {
     key: "workspaces",
-    label: "Workspaces",
+    label: (
+      <Link style={{ color: "black", paddingLeft: "0" }} to="/workspaces">
+        Workspaces
+      </Link>
+    ),
   },
   {
     key: "analytics",

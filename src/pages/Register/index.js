@@ -12,7 +12,7 @@ function Register() {
       <div className={style.leftWrapper}>
         <div className={style.formContainer}>
         <h2><b>Start creating your own account</b></h2>
-          <Form labelCol={{ span: 8 }} onFinish={() => navigate("/draft")}>
+          <Form labelCol={{ span: 8 }} onFinish={() => navigate("/workspaces")}>
 
           <div className={style.fullNameContainer}>
               <label>Full Name</label>

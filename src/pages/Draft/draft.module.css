@@ -6,14 +6,14 @@
     /* padding: 2rem; */
 }
 
-.card{
+/* .card{
     background-color: white;
     padding: 1rem;
     border-radius: 15px;
     box-shadow: 5px 5px 10px #c4c4c4;
     width: 60%;
     position: relative;
-}
+} */
 
 .postItem{
     display: flex;

@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import Layoutt from "./components/Layoutt/index";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
+import Workspaces from "./pages/Workspaces";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/layoutt" element={<Layoutt />} />
+          <Route path="/workspaces" element={<Layoutt isSidebarVisible={false}><Workspaces /></Layoutt>} />
         </Routes>
       </BrowserRouter>
     </div>

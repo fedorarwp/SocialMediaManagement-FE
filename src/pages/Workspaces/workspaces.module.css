@@ -1,0 +1,21 @@
+.wrapper{
+    /* height: 90vh; */
+    /* max-width: 100vw;  */
+    padding: 1rem;
+}
+
+.upperContainer{
+    display: flex;
+}
+
+.lowerContainer{
+    display: flex;
+}
+
+.workspaceBox{
+    width: 200px;
+    height: 100px;
+    background-color: gray;
+    border-color: black;
+    margin: 1rem;
+}
