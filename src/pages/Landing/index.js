@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./landing.module.css";
 import { Link } from "react-router-dom";
+import landingImage from "../../assets/images/schedule-landing-page.png";
 
 export default function Landing() {
   return (
@@ -24,7 +25,7 @@ export default function Landing() {
                 background: "black",
                 color: "white",
                 borderRadius: "5px",
-                padding: "0.5rem"
+                padding: "0.5rem",
               }}
               to="/register"
             >
@@ -34,13 +35,18 @@ export default function Landing() {
         </div>
       </div>
 
-      <div className={style.leftText}>
-        <h1>
-          <b>
-            Keep the essentials. This is the only social media management system
-            you ever need.
-          </b>
-        </h1>
+      <div className={style.landingContent}>
+        <div className={style.leftText}>
+          <h1>
+            <b>
+              Keep the essentials. This is the only social media management
+              system you ever need.
+            </b>
+          </h1>
+        </div>
+        <div className={style.rightImage}>
+          <img src={landingImage} alt="Beta Schedule" />
+        </div>
       </div>
     </div>
   );

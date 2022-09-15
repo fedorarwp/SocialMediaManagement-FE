@@ -6,11 +6,11 @@
   padding-bottom: 2rem;
 }
 
-.leftText{
-    width: 40%;
-    font-size: 16px;
-    padding-top: 10rem;
-    padding-left: 3rem;
+.leftText {
+  width: 45vw;
+  font-size: 18px;
+  padding-top: 10rem;
+  padding-left: 7rem;
 }
 
 .landingHeader {
@@ -37,7 +37,7 @@
   padding-right: 5rem;
 }
 
-a{
+a {
   color: black;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -49,9 +49,24 @@ a{
   padding-right: 2rem;
 }
 
-.registerLandingBtn{
+.registerLandingBtn {
   background-color: black;
   color: white;
   border-radius: 5px;
   justify-content: center;
+}
+
+.landingContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightImage {
+  width:50vw;
+}
+
+img {
+  width: 77%;
+  padding-left: 5rem;
+  padding-top: 2.7rem;
 }
