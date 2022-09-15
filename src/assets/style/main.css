@@ -9,7 +9,7 @@ body{
     width: 100vw;
 }
 
-.grid-layout {
+/* .grid-layout {
     display: grid;
     height: 100%;
     grid-template-columns: 185px 1fr;
@@ -55,7 +55,7 @@ body{
     color: white;
     font-weight: 500;
     font-size: 2rem;
-}
+} */
 
 .card{
     background-color: white;
@@ -67,5 +67,6 @@ body{
 }
 
 .card.posted{
-    width: 81.5%;
+    /* width: 81.5%; */
+    width: 77.5%;
 }

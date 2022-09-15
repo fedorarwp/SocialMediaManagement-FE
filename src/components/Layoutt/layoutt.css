@@ -24,7 +24,7 @@
 
   
 .ant-layout-header {
-  background: white;
+  background: #ebebeb;
   padding-left: 2rem;
 }
 
@@ -44,4 +44,12 @@
 
 /* .rightHeader{
 
+} */
+
+.ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light{
+  background-color: #ebebeb;
+}
+
+/* .ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light{
+  background-color: #d9d9d9;
 } */
