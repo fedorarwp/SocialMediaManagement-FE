@@ -209,7 +209,7 @@ function Draft() {
           style={{
             overflowY: "auto",
             overflowX: "hidden",
-            height: "70vh",
+            height: "68vh",
           }}
         >
           {loading && (
